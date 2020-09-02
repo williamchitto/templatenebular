@@ -1,0 +1,152 @@
+@import "./themes";
+
+@mixin nb-overrides() {
+  nb-select.size-medium button {
+    padding: 0.4375rem 2.2rem 0.4375rem 1.125rem !important;
+
+    nb-icon {
+      right: 0.41rem !important;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    button {
+      margin-top: 3px !important;
+      width: 100% !important;
+    }
+  }
+
+  @media (min-width: 768px) {
+    button {
+      margin-right: 5px !important;
+    }
+  }
+
+  nb-checkbox {
+    margin-right: 10px;
+  }
+
+  .formButtons {
+    font-size: 1.5rem !important;
+  }
+
+  .ui-inputtext {
+    font-size: 0.9375rem !important;
+    font-weight: 600 !important;
+    line-height: 1.5rem !important;
+    padding: 0.4375rem 1.55rem !important;
+    border-color: #e4e9f2 !important;
+    border-radius: 0.25rem !important;
+    background: #f7f9fc !important;
+    color: #222b45 !important;
+    background-color: #f7f9fc !important;
+    width: 100%;
+  }
+
+  .ui-inputtext:enabled:focus:not(.ui-state-error) {
+    box-shadow: unset !important;
+    background-color: #ffffff !important;
+    border-color: #3366ff !important;
+  }
+
+  body .ui-state-disabled,
+  body .ui-widget:disabled {
+    background-color: #f7f9fc !important;
+    border-color: #e4e9f2 !important;
+    color: rgba(143, 155, 179, 0.48) !important;
+  }
+
+  .statuserror {
+    .ui-inputtext {
+      border-color: #ff3d71 !important;
+    }
+  }
+
+  .requiredLabel {
+    color: #ff3d71;
+  }
+
+  .errorMessage {
+    color: #ff3d71;
+    font-size: 12px;
+  }
+
+  legend {
+    color: #8f9bb3;
+    font-family: Open Sans, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1rem;
+    width: unset;
+  }
+
+  .ui-fieldset {
+    border: 1px solid #e4e9f2;
+    width: 100%;
+  }
+
+  .ui-calendar {
+    width: 100%;
+  }
+
+  p-inputmask {
+    border-color: white !important;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .loader-overlay {
+    position: absolute;
+    width: 100%;
+    z-index: 500000;
+    top: 0;
+  }
+
+  .loader {
+    height: 4px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+  }
+
+  .loader:before {
+    display: block;
+    position: absolute;
+    content: "";
+    left: -200px;
+    width: 200px;
+    height: 4px;
+    background-color: red;
+    animation: loading 2s linear infinite;
+  }
+
+  @keyframes loading {
+    from {
+      left: -200px;
+      width: 30%;
+    }
+
+    50% {
+      width: 30%;
+    }
+
+    70% {
+      width: 70%;
+    }
+
+    80% {
+      left: 50%;
+    }
+
+    95% {
+      left: 120%;
+    }
+
+    to {
+      left: 100%;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<div class="row">
+
+  <div class="col-md-12 col-lg-5">
+    <label for="inputResidencia" class="label">{{labelUF}}</label>
+
+    <input autocomplete="off"  #inputUf [disabled]="disabled" [ngModel]="ufValue" (ngModelChange)="onModelChange($event)" nbInput type="text" fullWidth [nbAutocomplete]="ufControl" />
+
+    <nb-autocomplete [activeFirst]="true" [handleDisplayFn]="viewHandle" (selectedChange)="onUfChange($event)" #ufControl>
+      <nb-option *ngFor="let item of filteredUfs  | async" [value]="item">{{item.nomeComSigla}}</nb-option>
+    </nb-autocomplete>
+  </div>
+  <div class="col-md-12 col-lg-7">
+    <label for="inputMuniCi" class="label">{{labelCidade}}</label>
+    <input autocomplete="off" [disabled]="disabled" #inputCidade [ngModel]="municipioValue" (ngModelChange)="onMunicipioChange($event)" nbInput type="text" fullWidth name="inputMuniCi" [nbAutocomplete]="cidadeCOntrol" />
+    <nb-autocomplete [handleDisplayFn]="viewHandle2"  (selectedChange)="onMunicipioChangeSelect($event)" #cidadeCOntrol>
+      <nb-option *ngFor="let item of filtereMunicipios  | async" [value]="item">{{item.nome}}</nb-option>
+    </nb-autocomplete>
+  </div>
+</div>

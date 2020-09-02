@@ -1,0 +1,80 @@
+<div class="login-body">
+
+  <div class="login-panel">
+    <div class="logo">
+      <img src="../../assets/layout/images/logo.svg" alt="prestige-layout"/>
+    </div>
+  </div>
+
+  <div class="login-card">
+
+    <div class="top-border"></div>
+
+    <div class="login-content">
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+        <h3>ACOMPANHAMENTO GESTANTE E RECÉM-NASCIDO</h3>
+        <br/>
+        <p>Bem-vindo, utilize o formulário abaixo para efetuar o login.</p>
+
+        <div class="username-container">
+
+          <div class="login-input">
+            <label [ngClass]="{ 'requiredLabel': submitted && f.tipo.errors }">Tipo</label>
+            <nb-radio-group *ngFor="let item of keys(dominioTipoLogin)" id="tipo" name="tipo" formControlName="tipo" [ngClass]="{ 'statuserror': submitted && f.tipo.errors }">
+              <nb-radio
+              [value]="item">
+                {{dominioTipoLogin[item]}}
+              </nb-radio>
+            </nb-radio-group>
+          </div>
+        </div>
+
+        <div class="username-container">
+
+          <div class="login-input">
+            <label [ngClass]="{ 'requiredLabel': submitted && f.login.errors }">Usuário</label>
+            <input nbInput
+                          nbInput
+                          id="login"
+                          formControlName="login"
+                          name="login"
+                          [ngClass]="{ 'statuserror': submitted && f.login.errors }"
+                          class="ui-inputtext ui-widget"
+                          fullWidth
+                          placeholder="Digite seu nome de usuário"
+                          autofocus
+                          autocomplete="username"/>
+          </div>
+        </div>
+
+        <div class="password-container">
+
+          <div class="login-input">
+            <label [ngClass]="{ 'requiredLabel': submitted && f.senha.errors }">Senha</label>
+            <input
+                          nbInput
+                          id="senha"
+                          formControlName="senha"
+                          name="senha"
+                          [ngClass]="{ 'statuserror': submitted && f.senha.errors }"
+                          class="ui-inputtext ui-widget"
+                          fullWidth
+                          placeholder="Digite sua senha"
+                          type="password"
+                          autocomplete="current-password"/>
+          </div>
+        </div>
+
+        <div>
+          <button nbButton class="mt-1 appearance-filled size-medium status-primary shape-rectangle nb-transition">
+            <span>Login</span>
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+</div>

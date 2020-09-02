@@ -1,0 +1,72 @@
+{
+  "index": "/index.html",
+  "dataGroups": [
+    {
+      "name": "api-performance",
+      "urls": [
+        "**/api/exame",
+        "**/api/exame/**",
+        "**/api/uf",
+        "**/api/uf/**",
+        "**/api/municipio",
+        "**/api/municipio/**",
+        "**/api/unidade-saude/**"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 100000,
+        "maxAge": "5d"
+      }
+    },
+    {
+      "name": "api-freshness",
+      "urls": [
+        "**/api/ficha",
+        "**/api/ficha/**",
+        "**/api/usuario/**",
+        "**/api/perfil",
+        "**/api/perfil/**"
+
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 10000,
+        "maxAge": "5d",
+        "timeout": "5s"
+      }
+    }
+  ],
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/manifest.webmanifest",
+          "/*.css",
+          "/*.js",
+          "/*.wooff2",
+          "/*.ttf",
+          "/*.png",
+          "/*.svg",
+          "/*.bundle.css",
+          "/*.bundle.js",
+          "/*.chunk.js",
+          "/assets/**"
+        ]
+      }
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": ["/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"],
+        "urls": ["https://fonts.googleapis.com/**"]
+      }
+    }
+  ]
+}
